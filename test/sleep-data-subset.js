@@ -29,3 +29,5 @@ const sleepData = [
     "hoursSlept": 4.1,
     "sleepQuality": 3.6
   }];
+
+  module.exports = sleepData;
