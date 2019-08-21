@@ -36,7 +36,9 @@ class Hydration {
   getWeeklyOunces(passedDate) {
     let daysWithinRange = this.findDateRange(passedDate);
     let formattedInfo = daysWithinRange.map(elem => `You Drank ${this.getOuncesByDate(elem.date)} ounces on ${elem.date}`);
-    return formattedInfo
+    let reducedInfo = formattedInfo.reduce((noDuplicates, elem) => noDuplicates.includes(elem) ? noDuplicates : [...noDuplicates, elem], []);
+    console.log(reducedInfo)
+    return reducedInfo
   }
 }
 
