@@ -19,7 +19,7 @@ describe('Hydration', () => {
     const hydrationRepository = new HydrationRepository(data);
     const userHydration = hydrationRepository.returnUserHydration(1);
     const hydration = new Hydration(userHydration);
-    expect(hydration.getAllTimeAvg()).to.equal(56);
+    expect(hydration.getAllTimeAvg()).to.equal(60);
   })
 
   it('should return the user\'s ounces drank for any date', () => {

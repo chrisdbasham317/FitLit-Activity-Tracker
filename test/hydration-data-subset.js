@@ -4,12 +4,17 @@ const hydrationData = [{
   "numOunces": 37
   },
   {
-  "userID": 2,
+  "userID": 1,
   "date": "2019/06/15",
   "numOunces": 75
   },
   {
-  "userID": 3,
+  "userID": 1,
+  "date": "2019/06/16",
+  "numOunces": 69
+  },
+  {
+  "userID": 2,
   "date": "2019/06/15",
   "numOunces": 47
   },
@@ -24,3 +29,5 @@ const hydrationData = [{
   "numOunces": 42
   },
 ];
+ 
+module.exports = hydrationData;
