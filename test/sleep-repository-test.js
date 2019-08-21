@@ -13,7 +13,7 @@ describe('SleepRepository', () => {
   it('should be able to recieve data', () => {
     const sleepRepository = new SleepRepository(data);
 
-    expect(sleepRepository.sleepers[1]).to.deep.equal({
+    expect(sleepRepository.usersInfo[1]).to.deep.equal({
       "userID": 2,
       "date": "2019/06/15",
       "hoursSlept": 7,
@@ -24,26 +24,25 @@ describe('SleepRepository', () => {
   it('should find a user based on their id', () => {
     const sleepRepository = new SleepRepository(data);
 
-    expect(sleepRepository.returnUserSleep(5)).to.deep.equal([data[4]]);
+    expect(sleepRepository.returnUserSleep(5)).to.deep.equal([data[5]]);
   });
 
   it('should be able to calculate the average sleep of all users', () => {
     const sleepRepository = new SleepRepository(data);
 
-    expect(sleepRepository.calculateAverageSleepAll()).to.equal(33.4);
+    expect(sleepRepository.calculateAverageSleepAll()).to.equal(38.8);
   });
 
   it('should be able to calculate the average sleep quality of all users', () => {
     const sleepRepository = new SleepRepository(data);
 
-    expect(sleepRepository.calculateAverageSleepQualAll()).to.equal(18)
+    expect(sleepRepository.calculateAverageSleepQualAll()).to.equal(21)
   });
 
   it('should be able to calculate the average sleep quality greater than three for all users', () => {
     const sleepRepository = new SleepRepository(data);
     const sleep = new Sleep(sleepRepository.returnUserSleep(2));
 
-    sleepRepository.sleepQualOverThreeAll();
-    // expect(sleepRepository.sleepQualOverThreeAll()).to.equal();
+    expect(sleepRepository.getWeeklyQualAverage('2019/06/16')).to.equal(3.85);
   })
 });
