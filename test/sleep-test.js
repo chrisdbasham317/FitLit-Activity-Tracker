@@ -31,7 +31,23 @@ describe('Sleep', () => {
     expect(sleep.calculateAverageSleep()).to.equal(8);
   });
 
+  it('should be able to calculate the average sleep over a week', () => {
+    expect(sleep.calculateSleepOverWeek('2019/06/15')).to.equal(23)
+  });
+
   it('should be able to calculate the average sleep quality', () => {
     expect(sleep.calculateAverageSleepQual()).to.equal(4);
   });
-})
+
+  it('should be able to find a weeks worth of data', () => {
+    expect(sleep.findDateRange('2019/06/15')).length(3);
+  });
+
+  it('should be able to calculate the daily sleep quality', () => {
+    expect(sleep.calculateDailySleepQual('2019/06/17')).to.equal(3);
+  });
+
+  it('should be able to find the average sleep quality over a given week', () => {
+    expect(sleep.calculateWeeklySleepQual('2019/06/15')).to.equal(4);
+  });
+});
