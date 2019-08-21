@@ -8,6 +8,10 @@ class User {
     this.dailyStepGoal = userData.stepGoal;
     this.friends = userData.friends;
   }
+
+  findName() {
+    return this.name;
+  }
 }
 
 module.exports = User;
