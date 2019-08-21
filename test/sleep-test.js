@@ -32,6 +32,6 @@ describe('Sleep', () => {
   });
 
   it('should be able to calculate the average sleep quality', () => {
-    expect(sleep.calculateAverageSleepQual()).to.equal(12.4);
+    expect(sleep.calculateAverageSleepQual()).to.equal(4);
   });
 })
