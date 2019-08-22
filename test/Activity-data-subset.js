@@ -6,8 +6,8 @@ const activityData = [{
   "flightsOfStairs": 16
 },
 {
-  "userID": 2,
-  "date": "2019/06/15",
+  "userID": 1,
+  "date": "2019/06/16",
   "numSteps": 4294,
   "minutesActive": 138,
   "flightsOfStairs": 10
