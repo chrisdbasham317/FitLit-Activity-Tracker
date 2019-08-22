@@ -5,8 +5,91 @@
     <title>Activity Tracker</title>
   </head>
   <body>
-    <h1>Activity Tracker</h1>
+    <header class="header">
+      <h1>Activity Tracker</h1>
+    </header>
+    <aside class="aside">
+      <section class="section section--hamburger-menu">
+        <img class="img img-hamburger-btn">
+        <h2 class="h2 h2--community-tracker">Community Tracker</h2>
+      </section>
+      <section class="section section-daily-stats">
+        <h3>Daily</h3>
+          <ul class="ul ul--all-community-daily">
+            <li class="li li--activity-community-daily"></li>
+            <li class="li li--hydration-community-daily"></li>
+            <li class="li li--sleep-community-daily"></li>
+          </ul>
+      </section>
+      <section class="section section-weekly-stats">
+        <h3>Weekly</h3>
+          <ul class="ul ul--all-community-weekly">
+            <li class="li li--activity-community-weekly"></li>
+            <li class="li li--hydration-community-weekly"></li>
+            <li class="li li--sleep-community-weekly"></li>
+          </ul>
+      </section>
+    </aside>
+    <main class="main main--dashboard">
+      <section class="section section--activity-dashboard">
+        <h2 class="h2 h2--activity">Activity</h2>
+        <article class="article article--time-active">
+          <h3 class="h3 h3--time-active">Time Active</h3>
+          <article class="article article--time-active-daily">
 
+          </article>
+          <article class="article article--time-active-weekly">
+
+          </article>
+        </article>
+        <article class="article article--distance-group">
+          <section class="section section--miles-walked">
+            <h3 class="h3 h3--miles-walked">Miles Walked</h3>
+              <article class="article article--miles-daily">
+
+              </article>
+              <article class="article article--miles-weekly">
+
+              </article>
+          </section>
+          <section class="section section--step-goal">
+            <h3 class="h3 h3--step-goal">Step Goal</h3>
+            <article class="article article--step-goal-daily">
+
+            </article>
+            <article class="article article--step-goal-weekly">
+
+            </article>
+          </section>
+        </article>
+        <article class="article article--breakdown">
+          <h3 class="h3 h3--breakdown">Breakdown</h3>
+        </article>
+      </section>
+      <section class="section section--hydration-sleep">
+        <article class="article article--hydration">
+          <h2 class="h2 h2--hydration">Hydration</h2>
+          <section class="section section--daily-ounces">
+            <h3 class="h3 h3--daily-oz">Daily</h3>
+          </section>
+          <section class="section section--weekly-ounces">
+            <h3 class="h3 h3--weekly-oz"> Weekly</h3>
+          </section>
+        </article>
+        <article class="article article--sleep">
+          <h2 class="h2 h2--sleep">Sleep</h2>
+          <section class="section section--daily-sleep">
+            <h3 class="h3 h3--daily-sleep">Time Slept</h3>
+          </section>
+          <section class="section section--weekly-sleep">
+            <h3 class="h3 h3--weekly-sleep">Average Time Slept</h3>
+          </section>
+          <section class="section section--avg-sleep-quality">
+            <h3 class="h3 h3--avg-sleep-quality">Average Sleep Quality</h3>
+          </section>
+        </article>
+      </section>
+    </main>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>
