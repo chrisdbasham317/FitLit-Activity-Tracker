@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas: 
+  'head head head head'
+  'main main main aside' 
+  'main main main aside';
+  grid-template-columns: 1fr 1fr 1fr 20%;
+  grid-template-rows: 10% 1fr 1fr;
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: head;
+  text-align: center;
+}
+
+.aside {
+  background-color: blanchedalmond;
+  grid-area: aside;
+}
+
+.main {
+  background-color: #4F4440;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 60% 40%;
+  grid-template-areas:
+  'activity activity activity'
+  'bottom bottom bottom';
+}
+
+.section--activity-dashboard {
+  display: grid;
+  grid-area: activity;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10% 1fr 1fr;
+  grid-template-areas: 
+  'header header header'
+  'time distance breakdown'
+  'time distance breakdown';
+}
+
+.h2--activity {
+  background-color: #CD3551;
+  grid-area: header;
+  text-align: center;
+}
+
+.article--time-active {
+  background-color: #CD6535;
+  grid-area: time;
+}
+
+.article--distance-group {
+  grid-area: distance;
+}
+
+.section--miles-walked {
+  background-color: khaki;
+  display: block;
+  height: 50%;
+}
+
+.section--step-goal {
+  background-color: sandybrown;
+  display: block;
+  height: 50%;
+}
+
+.article--breakdown {
+  background-color: seashell;
+  grid-area: breakdown;
+}
+
+.section--hydration-sleep {
+  display: grid;
+  grid-area: bottom;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  'hydration sleep'; 
+}
+
+.article--hydration {
+  background-color: peru;
+  grid-area: hydration;
+}
+
+.article--sleep {
+  background-color: rebeccapurple;
+  grid-area: sleep;
+}
