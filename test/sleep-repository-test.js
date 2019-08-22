@@ -45,4 +45,15 @@ describe('SleepRepository', () => {
 
     expect(sleepRepository.getWeeklyQualAverage('2019/06/16')).to.deep.equal([{ userID: 2, sleepQuality: 7.7 }, { userID: 5, sleepQuality: 3.6 }]);
   })
+
+  it('should be able to find the best sleeper given a certain date', () => {
+    const sleepRepository = new SleepRepository(data);
+
+    expect(sleepRepository.findBestSleeper('2019/06/23')).to.deep.equal([{
+      "userID": 19,
+      "date": "2019/06/23",
+      "hoursSlept": 5.4,
+      "sleepQuality": 2.5
+    }]);
+  })
 });

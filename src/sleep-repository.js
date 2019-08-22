@@ -67,6 +67,18 @@ class SleepRepository {
 
     return allValidUsersWithinRange;
   }
+
+  findBestSleeper(date) {
+    let usersAtDate = this.usersInfo.filter(user => Date.parse(user.date) === Date.parse(date));
+
+    let userHours = usersAtDate.map(user => user.hoursSlept)
+
+    let maxHours = Math.max(...userHours);
+
+    let bestSleeper = usersAtDate.filter(user => user.hoursSlept === maxHours)
+
+    return bestSleeper;
+  }
 }
 
 module.exports = SleepRepository;
