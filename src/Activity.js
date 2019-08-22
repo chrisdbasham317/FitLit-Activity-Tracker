@@ -1,5 +1,3 @@
-const User = require('../src/user');
-
 class Activity {
   constructor(activityObj) {
     this.userActivity = activityObj;
@@ -32,5 +30,6 @@ class Activity {
 
 
 
-
-module.exports = Activity
+if (typeof module !== 'undefined') {
+  module.exports = Activity;
+}

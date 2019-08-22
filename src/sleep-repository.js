@@ -1,5 +1,3 @@
-const sleep = require('../src/Sleep');
-
 class SleepRepository {
   constructor(data) {
     this.sleepers = data;
@@ -29,4 +27,6 @@ class SleepRepository {
   }
 }
 
-module.exports = SleepRepository;
+if (typeof module !== 'undefined') {
+  module.exports = SleepRepository;
+}
