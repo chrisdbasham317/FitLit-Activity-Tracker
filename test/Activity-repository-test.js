@@ -1,0 +1,32 @@
+const chai = require('chai');
+const expect = chai.expect;
+
+const data = require('../test/Activity-data-subset');
+const ActivityRepository = require('../src/Activity-repository');
+
+describe('ActivityRepository', () => {
+  it('should store all the user\'s activity data', () => {
+    const activityRepository = new ActivityRepository(data);
+    expect(activityRepository.usersData).to.equal(data)
+  })
+
+  it('should be able to return a specific user\'s data by ID', () => {
+    const activityRepository = new ActivityRepository(data);
+    expect(activityRepository.returnUserActivityByID(1)).to.deep.equal([{ userID: 1, date: '2019/06/15', numSteps: 3577, minutesActive: 140, flightsOfStairs: 16 }])
+  })
+
+  it('should be able to return the average stairs climbed for all users by date', () => {
+    const activityRepository = new ActivityRepository(data);
+    expect(activityRepository.getAvgActivity('2019/06/15', 'flightsOfStairs')).to.equal(19.75)
+  })
+
+  it('should be able to return the average steps taken for all users by date', () => {
+    const activityRepository = new ActivityRepository(data);
+    expect(activityRepository.getAvgActivity('2019/06/15', 'numSteps')).to.equal(7238.75)
+  })
+
+  it('should be able to return the average minutes active for all users by date', () => {
+    const activityRepository = new ActivityRepository(data);
+    expect(activityRepository.getAvgActivity('2019/06/15', 'minutesActive')).to.equal(153.625)
+  })
+})
