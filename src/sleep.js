@@ -25,7 +25,7 @@ class Sleep {
     let averageSleep = weekSample.reduce((acc, day) => {
       return Math.round(acc + day.hoursSlept)
     }, 0);
-
+   
     return averageSleep;
   };
 

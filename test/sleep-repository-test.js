@@ -43,6 +43,6 @@ describe('SleepRepository', () => {
     const sleepRepository = new SleepRepository(data);
     const sleep = new Sleep(sleepRepository.returnUserSleep(2));
 
-    expect(sleepRepository.getWeeklyQualAverage('2019/06/16')).to.equal(3.85);
+    expect(sleepRepository.getWeeklyQualAverage('2019/06/16')).to.deep.equal([{ userID: 2, sleepQuality: 7.7 }, { userID: 5, sleepQuality: 3.6 }]);
   })
 });
