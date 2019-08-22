@@ -65,7 +65,9 @@ class SleepRepository {
 
     let allValidUsersWithinRange = arr.filter(obj => obj.sleepQuality >= 3)
 
-    return allValidUsersWithinRange;
+    let sortedUsersWithinRange = allValidUsersWithinRange.sort((a, b) => b.sleepQuality - a.sleepQuality);
+    
+    return sortedUsersWithinRange;
   }
 
   findBestSleeper(date) {
