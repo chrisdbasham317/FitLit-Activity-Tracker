@@ -3,32 +3,81 @@
 }
 
 body {
+  background-image: url(../images/cool-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
   grid-template-areas: 
   'head head head head'
   'main main main aside' 
   'main main main aside';
   grid-template-columns: 1fr 1fr 1fr 20%;
-  grid-template-rows: 10% 1fr 1fr;
+  /* grid-template-rows: 10% 1fr 1fr; */
+  margin: 0px;
   min-height: 100vh;
+  padding: 20px;
+  width: 100%;
 }
 
 .header {
+  height: 100px;
   grid-area: head;
+  padding: 20px;
   text-align: center;
+}
+
+h1 {
+  border-bottom: 2px solid black;
+  font-size: 3em;
+  margin: auto;
+  width: 340px;
 }
 
 .aside {
   background-color: blanchedalmond;
   grid-area: aside;
+  opacity: 0.7;
+  padding: 2px;
+}
+
+.h3--community-daily,
+.h3--community-weekly {
+  text-align: center;
+}
+
+.section-daily-stats {
+  height: 40%;
+  margin-bottom: 60px;
+}
+
+.section-weekly-stats {
+  height: 40%;
+}
+
+ul {
+  height: 100%;
+}
+
+li {
+  height: 33%;
+}
+
+.h2--community-tracker {
+  border-bottom: 2px solid black;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
 }
 
 .main {
-  background-color: #4F4440;
   grid-area: main;
   display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 60% 40%;
+  /* grid-template-rows: 60% 40%; */
   grid-template-areas:
   'activity activity activity'
   'bottom bottom bottom';
@@ -37,6 +86,8 @@ body {
 .section--activity-dashboard {
   display: grid;
   grid-area: activity;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 10% 1fr 1fr;
   grid-template-areas: 
@@ -47,50 +98,116 @@ body {
 
 .h2--activity {
   background-color: #CD3551;
+  border: 1px solid black;
   grid-area: header;
+  margin: 5px 0px;
+  padding: 10px;
   text-align: center;
 }
 
 .article--time-active {
-  background-color: #CD6535;
+  background-color: #CD3551;
+  border: 1px solid black;
+  opacity: 0.7;
   grid-area: time;
+  height: 500px;
+  padding: 2px;
+}
+
+.h3--time-active {
+  background-color: #CD3551;
+  border-bottom: 2px solid black;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
 }
 
 .article--distance-group {
   grid-area: distance;
+  opacity: 0.7;
 }
 
 .section--miles-walked {
-  background-color: khaki;
+  background-color: #CD3551;
+  border: 1px solid black;
   display: block;
-  height: 50%;
+  height: 47.5%;
+  margin-bottom: 20px;
+  padding: 2px;
+}
+
+.h3--miles-walked {
+  background-color: #CD3551;
+  border-bottom: 2px solid black;
+  margin-top: 0px;
+  padding: 5px;
+  text-align: center;
 }
 
 .section--step-goal {
-  background-color: sandybrown;
+  background-color: #CD3551;
+  border: 1px solid black;
   display: block;
-  height: 50%;
+  height: 47.5%;
+  margin-top: 20px;
+  padding: 2px;
+}
+
+.h3--step-goal {
+  background-color: #CD3551;
+  border-bottom: 2px solid black;
+  margin-top: 0px;
+  padding: 5px;
+  text-align: center;
 }
 
 .article--breakdown {
-  background-color: seashell;
+  background-color: #CD3551;
+  border: 1px solid black;
   grid-area: breakdown;
+  height: 500px;
+  opacity: 0.7;
+  padding: 2px;
+}
+
+.h3--breakdown {
+  background-color: #CD3551;
+  border-bottom: 2px solid black;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
 }
 
 .section--hydration-sleep {
   display: grid;
   grid-area: bottom;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
   'hydration sleep'; 
 }
 
 .article--hydration {
-  background-color: peru;
+  background-color: #9AD2FF;
+  border: 1px solid black;
   grid-area: hydration;
+  opacity: 0.7;
+  padding: 2px;
+}
+
+.h2--hydration,
+.h2--sleep {
+  text-align: center;
+  border-bottom: 2px solid black;
+  margin: 0px;
+  padding: 5px;
 }
 
 .article--sleep {
-  background-color: rebeccapurple;
+  background-color: #BBA2FF;
+  border: 1px solid black;
   grid-area: sleep;
+  opacity: 0.7;
+  padding: 2px;
 }
