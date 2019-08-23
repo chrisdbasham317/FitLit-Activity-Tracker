@@ -42,6 +42,11 @@ h1 {
   padding: 2px;
 }
 
+.img-hamburger-btn {
+  height: 30px;
+  margin: 0px 10px;
+}
+
 .h3--community-daily,
 .h3--community-weekly {
   text-align: center;
