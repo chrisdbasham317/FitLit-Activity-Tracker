@@ -5,6 +5,7 @@
     <link rel="sytlesheet" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Activity Tracker</title>
   </head>
   <body>
@@ -72,6 +73,7 @@
       <section class="section section--hydration-sleep">
         <article class="article article--hydration">
           <h2 class="h2 h2--hydration">Hydration</h2>
+          <canvas id="myChart" width="auto" height="auto"></canvas>
           <section class="section section--daily-ounces">
             <h3 class="h3 h3--daily-oz">Daily</h3>
           </section>
@@ -100,7 +102,6 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <!-- <script src="path/to/chartjs/dist/Chart.js"></script> -->
     <script type="text/javascript" src="./user.js"></script>
     <script type="text/javascript" src="./user-repository.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
