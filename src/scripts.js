@@ -31,8 +31,8 @@ $(document).ready(function () {
   $(`<p>${userSleep.calculateAverageSleep()}</p>`).insertAfter(".h4--sleep-time-record");
 
   let oz = [userHydration.getOuncesByDate(dateToday)];
-  var ctx = document.getElementById("myChart");
-  var myChart = new Chart(ctx, {
+  var ozByDateChart = document.getElementById("oz-by-date");
+  var dailyOzChart = new Chart(ozByDateChart, {
   type: 'bar',
   data: {
     labels: oz,
