@@ -7,7 +7,7 @@ $(document).ready(function () {
   const userRepo = new UserRepository(userData);
   const getUser = userRepo.returnUser(instanceId);
   const user = new User(getUser);
-  console.log(user)
+  // console.log(user)
   const hydrationRepo = new HydrationRepository(hydrationData);
   const getHydration = hydrationRepo.returnUserHydration(instanceId); 
   const userHydration = new Hydration(getHydration);
@@ -37,6 +37,9 @@ $(document).ready(function () {
   // inserts activity data onto the DOM
   $(`<p class="p p--daily-time-active">${userActivity.getMinutesActiveDay(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-daily");
   $(`<p class="p p--weekly-time-active">${userActivity.getMinutesActiveWeek(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-weekly");
+  $(`<h4 class="h4 h4--miles-daily">Today's Mile Count</h4>
+  <p class="p p--miles-walked">${userActivity.getMilesWalkedDay(dateToday, 'numSteps', user)}</p>`).insertAfter('.article--miles-daily');
+  
 
 
   let oz = [userHydration.getOuncesByDate(dateToday)];
