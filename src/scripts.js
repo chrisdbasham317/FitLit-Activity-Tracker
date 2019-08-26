@@ -21,6 +21,9 @@ $(document).ready(function () {
   const userActivity = new Activity(getActivity);
   // console.log(userActivity);
 
+  //Inserts User Info to DOM
+  $(`<h1>${user.findName()}'s</h1>`).insertBefore('h1');
+
   //Inserts Hydration Data to DOM
   $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h3--daily-oz");
   $(`<p>${userHydration.getWeeklyOunces(dateToday)}</p>`).insertAfter(".h3--weekly-oz");
@@ -42,7 +45,9 @@ $(document).ready(function () {
   $(`<h4 class="h4 h4--steps-daily">Today's Step Count</h4>
   <p class="p p--daily-steps">${userActivity.getActivityTotal(dateToday, 'numSteps')} steps / ${user.dailyStepGoal} steps</p>`).insertAfter('.article--step-goal-daily');
   $(`<h4 class="h4 h4--steps-weekly">Weekly Step Average</h4>
-  <p class="p p--weekly-steps">${userActivity.getMinutesActiveWeek(dateToday, 'numSteps')} steps on average.</p>`).insertAfter('.article--step-goal-daily');
+  <p class="p p--weekly-steps">${userActivity.getMinutesActiveWeek(dateToday, 'numSteps')} steps on average</p>`).insertAfter('.article--step-goal-weekly');
+  $(`<h4 class="h4 h4--stairs-daily">Today's Stairs</h4>
+  <p class="p p--stairs-daily">${userActivity.getActivityTotal(dateToday, 'flightsOfStairs')} flights of stairs climbed today!</p>`).insertAfter('.h3--breakdown');
 
   let oz = [userHydration.getOuncesByDate(dateToday)];
   var ctx = document.getElementById("myChart");
