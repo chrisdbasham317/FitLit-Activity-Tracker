@@ -5,12 +5,12 @@ class User {
     this.address = userData.address;
     this.email = userData.email;
     this.strideLength = userData.strideLength;
-    this.dailyStepGoal = userData.stepGoal;
+    this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
   }
 
   findName() {
-    return this.name;
+    return this.name.split(' ')[0];
   }
 }
 
