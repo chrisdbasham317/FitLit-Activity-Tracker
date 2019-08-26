@@ -7,7 +7,7 @@ $(document).ready(function () {
   const userRepo = new UserRepository(userData);
   const getUser = userRepo.returnUser(instanceId);
   const user = new User(getUser);
-  // console.log(user)
+  console.log(user)
   const hydrationRepo = new HydrationRepository(hydrationData);
   const getHydration = hydrationRepo.returnUserHydration(instanceId); 
   const userHydration = new Hydration(getHydration);
@@ -16,6 +16,10 @@ $(document).ready(function () {
   const getSleep = sleepRepo.returnUserSleep(instanceId);
   const userSleep = new Sleep(getSleep);
   // console.log(userSleep)
+  const activityRepo = new ActivityRepository(activityData);
+  const getActivity = activityRepo.returnUserActivityByID(instanceId);
+  const userActivity = new Activity(getActivity);
+  // console.log(userActivity);
 
   //Inserts Hydration Data to DOM
   $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h3--daily-oz");
@@ -29,6 +33,11 @@ $(document).ready(function () {
   $(`<p>${userSleep.calculateWeeklySleepQual(dateToday)}</p>`).insertAfter(".h3--avg-sleep-quality");
   $(`<p>${userSleep.calculateAverageSleepQual()}</p>`).insertAfter(".h4--sleep-qual-record");
   $(`<p>${userSleep.calculateAverageSleep()}</p>`).insertAfter(".h4--sleep-time-record");
+
+  // inserts activity data onto the DOM
+  $(`<p class="p p--daily-time-active">${userActivity.getMinutesActiveDay(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-daily");
+  $(`<p class="p p--weekly-time-active">${userActivity.getMinutesActiveWeek(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-weekly");
+
 
   let oz = [userHydration.getOuncesByDate(dateToday)];
   var ctx = document.getElementById("myChart");
