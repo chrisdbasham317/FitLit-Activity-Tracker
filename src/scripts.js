@@ -37,7 +37,7 @@ $(document).ready(function () {
   $(`<p>${userSleep.calculateAverageSleepQual()}</p>`).insertAfter(".h4--sleep-qual-record");
   $(`<p>${userSleep.calculateAverageSleep()}</p>`).insertAfter(".h4--sleep-time-record");
 
-  // inserts activity data onto the DOM
+  // Inserts Activity Data onto the DOM
   $(`<p class="p p--daily-time-active">${userActivity.getMinutesActiveDay(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-daily");
   $(`<p class="p p--weekly-time-active">${userActivity.getMinutesActiveWeek(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-weekly");
   $(`<h4 class="h4 h4--miles-daily">Today's Mile Count</h4>
@@ -48,6 +48,17 @@ $(document).ready(function () {
   <p class="p p--weekly-steps">${userActivity.getMinutesActiveWeek(dateToday, 'numSteps')} steps on average</p>`).insertAfter('.article--step-goal-weekly');
   $(`<h4 class="h4 h4--stairs-daily">Today's Stairs</h4>
   <p class="p p--stairs-daily">${userActivity.getActivityTotal(dateToday, 'flightsOfStairs')} flights of stairs climbed today!</p>`).insertAfter('.h3--breakdown');
+  $(`<h4 class="h4 h4--stairs-weekly">Weekly Stair Average</h4>
+  <p class="p p--stairs-weekly">${userActivity.getMinutesActiveWeek(dateToday, 'flightsOfStairs')} average flights of stairs climbed!</p>`).insertAfter('.p--stairs-daily');
+
+  // Inserts Community Data to the DOM
+  $(`<h4 class="h4 h4--community-time-active">Community Time Active</h4>
+  <p class="p p--community-time-active">${activityRepo.getAvgActivity(dateToday, 'minutesActive')}</p>`).insertAfter('.li--activity-community-daily');
+  $(`<h4 class="h4 h4--community-steps">Community Step Average</h4>
+  <p class="p p--community-steps">${activityRepo.getAvgActivity(dateToday, 'numSteps')}</p>`).insertAfter('.p--community-time-active');
+  $(`<h4 class="h4 h4--community-stairs">Community Average Stairs Climbed</h4>
+  <p class="p p--community-stairs">${activityRepo.getAvgActivity(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-steps');
+
 
   let oz = [userHydration.getOuncesByDate(dateToday)];
   var ctx = document.getElementById("myChart");
