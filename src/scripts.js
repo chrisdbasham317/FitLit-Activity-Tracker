@@ -53,7 +53,7 @@ $(document).ready(function () {
 
   // Inserts Community Data to the DOM
   $(`<h4 class="h4 h4--community-time-active">Community Time Active</h4>
-  <p class="p p--community-time-active">${activityRepo.getAvgActivity(dateToday, 'minutesActive')}</p>`).insertAfter('.li--activity-community-daily');
+  <p class="p p--community-time-active">${activityRepo.getAvgActivity(dateToday, 'minutesActive')}</p>`).insertAfter('.h3--community-daily');
   $(`<h4 class="h4 h4--community-steps">Community Step Average</h4>
   <p class="p p--community-steps">${activityRepo.getAvgActivity(dateToday, 'numSteps')}</p>`).insertAfter('.p--community-time-active');
   $(`<h4 class="h4 h4--community-stairs">Community Average Stairs Climbed</h4>
