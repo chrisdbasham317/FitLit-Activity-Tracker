@@ -39,7 +39,10 @@ $(document).ready(function () {
   $(`<p class="p p--weekly-time-active">${userActivity.getMinutesActiveWeek(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-weekly");
   $(`<h4 class="h4 h4--miles-daily">Today's Mile Count</h4>
   <p class="p p--miles-walked">${userActivity.getMilesWalkedDay(dateToday, 'numSteps', user)}</p>`).insertAfter('.article--miles-daily');
-  $(`<p class="p p--daily-steps">${userActivity.getActivityTotal(dateToday, 'numSteps')} steps / ${user.dailyStepGoal} steps</p>`).insertAfter('.article--step-goal-daily');
+  $(`<h4 class="h4 h4--steps-daily">Today's Step Count</h4>
+  <p class="p p--daily-steps">${userActivity.getActivityTotal(dateToday, 'numSteps')} steps / ${user.dailyStepGoal} steps</p>`).insertAfter('.article--step-goal-daily');
+  $(`<h4 class="h4 h4--steps-weekly">Weekly Step Average</h4>
+  <p class="p p--weekly-steps">${userActivity.getMinutesActiveWeek(dateToday, 'numSteps')} steps on average.</p>`).insertAfter('.article--step-goal-daily');
 
   let oz = [userHydration.getOuncesByDate(dateToday)];
   var ctx = document.getElementById("myChart");
