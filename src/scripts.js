@@ -2,7 +2,7 @@ $(document).ready(function () {
   function getRanId() {
     return Math.floor(Math.random() * (50 - 1) + 1);
   }
-  const dateToday = `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`
+  const dateToday = `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`
   const instanceId = getRanId();
   const userRepo = new UserRepository(userData);
   const getUser = userRepo.returnUser(instanceId);
