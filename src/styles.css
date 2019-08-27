@@ -3,9 +3,7 @@
 }
 
 body {
-  background-image: url(../images/cool-background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #262F31;
   display: grid;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
@@ -38,7 +36,6 @@ h1 {
 .aside {
   background-color: blanchedalmond;
   grid-area: aside;
-  opacity: 0.7;
   padding: 2px;
 }
 
@@ -50,7 +47,6 @@ h1 {
 .backdrop {
   height: 100%;
   width: 100%;
-  opacity: 0.4;
 }
 
 .bring-to-front {
@@ -131,7 +127,6 @@ li {
 .article--time-active {
   background-color: #CD3551;
   border: 1px solid black;
-  opacity: 0.7;
   grid-area: time;
   height: 500px;
   padding: 2px;
@@ -147,7 +142,6 @@ li {
 
 .article--distance-group {
   grid-area: distance;
-  opacity: 0.7;
 }
 
 .section--miles-walked {
@@ -189,7 +183,6 @@ li {
   border: 1px solid black;
   grid-area: breakdown;
   height: 500px;
-  opacity: 0.7;
   padding: 2px;
 }
 
@@ -207,15 +200,19 @@ li {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 10% 1fr 1fr;
-  grid-template-areas: 'header header' 'hydration sleep';
+  grid-template-rows: 10% 1fr 10% 1fr;
+  grid-template-areas: 
+  'hydrationHeader hydrationHeader' 
+  'hydration hydration'
+  'sleepHeader sleepHeader'
+  'sleep sleep';
 }
 
 .article--hydration {
   background-color: #9AD2FF;
   border: 1px solid black;
   grid-area: hydration;
-  opacity: 0.7;
+  margin-bottom: 25px;
   padding: 2px;
 }
 
@@ -227,18 +224,28 @@ li {
   width: auto;
 }
 
-.h2--hydration,
-.h2--sleep {
-  text-align: center;
+.h2--hydration {
+  background-color: #9AD2FF;
   border-bottom: 2px solid black;
+  grid-area: hydrationHeader;
   margin: 0px;
   padding: 5px;
+  text-align: center;
+}
+
+.h2--sleep {
+  background-color: #BBA2FF;
+  border-bottom: 2px solid black;
+  grid-area: sleepHeader;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
 }
 
 .article--sleep {
   background-color: #BBA2FF;
   border: 1px solid black;
   grid-area: sleep;
-  opacity: 0.7;
+  margin-bottom: 25px;
   padding: 2px;
 }
