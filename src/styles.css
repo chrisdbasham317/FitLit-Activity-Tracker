@@ -207,8 +207,8 @@ li {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-  'hydration sleep'; 
+  grid-template-rows: 10% 1fr 1fr;
+  grid-template-areas: 'header header' 'hydration sleep';
 }
 
 .article--hydration {
