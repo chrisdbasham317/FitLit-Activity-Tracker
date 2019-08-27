@@ -7,6 +7,20 @@ class HydrationRepository {
     let userData = this.userHydration.filter(user => user.userID === userId)
     return userData;
   }
+
+  sumArray(arr) {
+    let total = arr.reduce((totalActivity, currentActivity) => {
+      return totalActivity += currentActivity;
+    }, 0);
+    return total;
+  }
+
+  getAvgOunces(passedDate) {
+    let date = Date.parse(passedDate)
+    let thisDaysHydration = this.userHydration.filter(elem => Date.parse(elem.date) === date);
+    let totalHydration = thisDaysHydration.map(elem => elem.numOunces);
+    return this.sumArray(totalHydration) / totalHydration.length;
+  }
 }
 
 
