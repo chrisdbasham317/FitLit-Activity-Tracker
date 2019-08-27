@@ -127,11 +127,33 @@ $(document).ready(function () {
           ]
         }
       ]
-
-    
     }
   });
 
-
+  let dailyStepTotal = userActivity.getActivityTotal(dateToday, 'numSteps');
+  let dailyStepGoal = user.dailyStepGoal;
+  let todaysStepMetrics = [dailyStepTotal, dailyStepGoal];
+  
+  let stepGoalByDateChart = $('#daily-step-metric');
+  let dailyStepGoalChart = new Chart(stepGoalByDateChart, {
+  type: 'doughnut',
+  data: {
+    labels: todaysStepMetrics,
+    datasets: [
+        { 
+          data: todaysStepMetrics,
+          label: "Daily Step Count out of Total",
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ]
+        }
+      ]
+    }
+  });
 
 });
