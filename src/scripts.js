@@ -7,7 +7,7 @@ $(document).ready(function () {
   const userRepo = new UserRepository(userData);
   const getUser = userRepo.returnUser(instanceId);
   const user = new User(getUser);
-  // console.log(user)
+  const friendsFName = user.friends.map(elem => userRepo.returnUser(elem)['name'].split(' ')[0]);
   const hydrationRepo = new HydrationRepository(hydrationData);
   const getHydration = hydrationRepo.returnUserHydration(instanceId); 
   const userHydration = new Hydration(getHydration);
@@ -23,6 +23,15 @@ $(document).ready(function () {
 
   //Inserts User Info to DOM
   $(`<h1>${user.findName()}'s</h1>`).insertBefore('h1');
+  $(`<ul>
+  <li>User ID: ${user.id}</li>
+  <li>User Name: ${user.name}</li>
+  <li>Address: ${user.address}</li>
+  <li>Email: ${user.email}</li>
+  <li>Stride Length: ${user.strideLength}</li>
+  <li>Daily Step Goal: ${user.dailyStepGoal}</li>
+  <li>Friends: ${friendsFName.join(', ')}</li>
+  </ul>`).appendTo('.article--hamburger-menu');
 
   //Inserts Hydration Data to DOM
   $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h3--daily-oz");
