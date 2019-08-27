@@ -74,10 +74,10 @@ $(document).ready(function () {
   $(`<h4 class="h4 h4--community-ounces">Community Average Water Intake</h4>
   <p class="p p--community-ounces">${hydrationRepo.getAvgOunces(dateToday)}</p>`).insertAfter('.p--community-stairs');
 
-
+// Inserts Charts on DOM
   let oz = [userHydration.getOuncesByDate(dateToday)];
-  var ozByDateChart = document.getElementById("oz-by-date");
-  var dailyOzChart = new Chart(ozByDateChart, {
+  let ozByDateChart = $('#oz-by-date');
+  let dailyOzChart = new Chart(ozByDateChart, {
   type: 'bar',
   data: {
     labels: oz,
@@ -98,6 +98,39 @@ $(document).ready(function () {
     }
   });
 
+  let dailyMileCount = [userActivity.getMilesWalkedDay(dateToday, 'numSteps', user)];
+  
+  // !!!!!!!!!!!!!!!!! Add as a custom metric
+  
+  dailyMileCount.unshift(10)
+  // let totalMileCount = [activityRepo.getAvgActivity(dateToday, 'milesWalked')]
+  let milesByDateChart = $('#daily-mile-count');
+  let dailyMileChart = new Chart(milesByDateChart, {
+  type: 'polarArea',
+  data: {
+    labels: dailyMileCount,
+    datasets: [
+        { 
+          data: dailyMileCount,
+          // label: "Daily Mile Count",
+          labels: [
+            'Miles Walked',
+            '15 Miles'
+          ],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ]
+        }
+      ]
+
+    
+    }
+  });
 
 
 
