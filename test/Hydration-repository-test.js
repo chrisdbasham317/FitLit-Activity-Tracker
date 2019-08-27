@@ -12,6 +12,11 @@ describe('HydrationRepository', () => {
 
   it('should be able to return hydration data by user id', () => {
     const hydrationRepository = new HydrationRepository(data);
-    expect(hydrationRepository.returnUserHydration(1)).to.have.lengthOf(2)
+    expect(hydrationRepository.returnUserHydration(1)).to.have.lengthOf(3)
+  })
+
+  it('should be able to return the average water intake for all users on a given day', () => {
+    const hydrationRepository = new HydrationRepository(data);
+    expect(hydrationRepository.getAvgOunces("2019/06/15")).to.equal(57.2);
   })
 })
