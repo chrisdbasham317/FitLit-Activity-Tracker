@@ -73,6 +73,8 @@ $(document).ready(function () {
   <p class="p p--community-stairs">${activityRepo.getAvgActivity(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-steps');
   $(`<h4 class="h4 h4--community-ounces">Community Average Water Intake</h4>
   <p class="p p--community-ounces">${hydrationRepo.getAvgOunces(dateToday)}</p>`).insertAfter('.p--community-stairs');
+  $(`<h4 class="h4 h4--community-sleep">Community Average Sleep</h4>
+  <p class="p p--community-sleep">${sleepRepo.calcAverageSleepAllDaily(dateToday)}</p>`).insertAfter('.p--community-ounces');
 
 
   let oz = [userHydration.getOuncesByDate(dateToday)];

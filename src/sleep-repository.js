@@ -31,6 +31,14 @@ class SleepRepository {
     return totalSleepAll;
   }
 
+  calcAverageSleepAllDaily(passedDate) {
+    let date = Date.parse(passedDate);
+    let todaysSleep = this.usersInfo.filter(sleepData => Date.parse(sleepData.date) === date);
+    let totalSleep = todaysSleep.map(data => data.hoursSlept);
+    let cummulativeSleep = totalSleep.reduce((sleepTotal, hours) => sleepTotal += hours, 0) / todaysSleep.length;
+    return cummulativeSleep.toFixed(2);
+  }
+
   calculateAverageSleepQualAll() {
     let totalSleepQualAll = this.usersInfo.reduce((acc, person) => {
       return acc + person.sleepQuality

@@ -56,4 +56,9 @@ describe('SleepRepository', () => {
       "sleepQuality": 2.5
     }]);
   })
+
+  it('should return the average time slept for all users on a given day', () => {
+    const sleepRepository = new SleepRepository(data);
+    expect(sleepRepository.calcAverageSleepAllDaily("2019/06/23")).to.equal('4.75');
+  })
 });
