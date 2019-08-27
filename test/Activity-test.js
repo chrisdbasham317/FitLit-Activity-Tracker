@@ -29,5 +29,8 @@ describe('Activity', () => {
     expect(activity.getMinutesActiveDay('2019/06/15', 'minutesActive')).to.equal(140);
   })
 
-  it('should return average minutes active for a given week', () => )
+  it('should return average minutes active for a given week', () => {
+
+  })
+
 })
