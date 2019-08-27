@@ -47,6 +47,24 @@ h1 {
   margin: 0px 10px;
 }
 
+.backdrop {
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+}
+
+.bring-to-front {
+  background: blanchedalmond;
+  grid-area: aside;
+  height: auto;
+  position: absolute;
+  z-index: 20;
+}
+
+.hide {
+  display: none;
+}
+
 .h3--community-daily,
 .h3--community-weekly {
   text-align: center;

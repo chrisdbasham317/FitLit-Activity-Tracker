@@ -30,7 +30,19 @@ describe('Activity', () => {
   })
 
   it('should return average minutes active for a given week', () => {
-
+    expect(activity.getMinutesActiveWeek('2019/06/15', 'minutesActive')).to.equal('39.71');
   })
 
+  it('should tell a user if they reached their step goal on a given date', () => {
+    expect(activity.returnStepGoalMet('2019/06/15', user.dailyStepGoal)).to.equal(false);
+  })
+
+  it('should return all the days where a user met their step goal', () => {
+    expect(activity.returnAllMetStepGoals(user.dailyStepGoal)).to.equal("You haven't reached your step goal yet, Keep Striving For It!");
+    expect(activity.returnAllMetStepGoals(2500)).to.deep.equal(['2019/06/15', '2019/06/16'])
+  })
+
+  it('should return the user\'s most stairs climbed record', () => {
+    expect(activity.getMostStairsClimbed()).to.equal(16);
+  })
 })
