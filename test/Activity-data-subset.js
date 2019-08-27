@@ -7,6 +7,13 @@ const activityData = [{
 },
 {
   "userID": 1,
+  "date": "2019/06/17",
+  "numSteps": 7402,
+  "minutesActive": 116,
+  "flightsOfStairs": 33
+},
+{
+  "userID": 1,
   "date": "2019/06/16",
   "numSteps": 4294,
   "minutesActive": 138,
@@ -53,6 +60,13 @@ const activityData = [{
   "numSteps": 10333,
   "minutesActive": 114,
   "flightsOfStairs": 31
+},
+{
+  "userID": 9,
+  "date": "2019/06/13",
+  "numSteps": 12501,
+  "minutesActive": 160,
+  "flightsOfStairs": 11
 }
 ];
 
