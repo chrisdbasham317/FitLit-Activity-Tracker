@@ -23,7 +23,7 @@ $(document).ready(function () {
 
   //Inserts User Info to DOM
   $(`<h1>${user.findName()}'s</h1>`).insertBefore('h1');
-  $(`<ul>
+  $(`<ul class="ul ul--user-info hide bring-to-front">
   <li>User ID: ${user.id}</li>
   <li>User Name: ${user.name}</li>
   <li>Address: ${user.address}</li>
@@ -31,7 +31,11 @@ $(document).ready(function () {
   <li>Stride Length: ${user.strideLength}</li>
   <li>Daily Step Goal: ${user.dailyStepGoal}</li>
   <li>Friends: ${friendsFName.join(', ')}</li>
+  <div class="backdrop hide"></div>
   </ul>`).appendTo('.article--hamburger-menu');
+  $('.img-hamburger-btn').on('click', function () {
+    $('.ul--user-info, .backdrop').toggleClass('hide');
+  });
 
   //Inserts Hydration Data to DOM
   $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h3--daily-oz");
