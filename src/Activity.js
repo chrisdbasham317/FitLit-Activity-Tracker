@@ -1,5 +1,3 @@
-const UserRepository = require('../src/user-repository.js');
-
 class Activity {
   constructor(activityObj) {
     this.userActivity = activityObj;
