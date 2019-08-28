@@ -41,10 +41,10 @@ $(document).ready(function () {
   // $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h2--hydration");
 
   //Inserts Sleep Data to DOM
-  $(`<p class="p p--daily-sleep">${userSleep.calculateDailySleep(dateToday)}</p>`).insertAfter(".h3--daily-sleep");
-  $(`<p>${userSleep.calculateDailySleepQual(dateToday)}</p>`).insertAfter(".p--daily-sleep");
-  $(`<p class="p p--weekly-sleep">${userSleep.calculateSleepOverWeek(dateToday)}</p>`).insertAfter(".h3--weekly-sleep");
-  $(`<p>${userSleep.calculateWeeklySleepQual(dateToday)}</p>`).insertAfter(".h3--avg-sleep-quality");
+  $(`<p class="p p--daily-sleep">${userSleep.calculateDailySleep(dateToday)} hours</p>`).insertAfter(".h3--daily-sleep");
+  $(`<p>Sleep Quality: ${userSleep.calculateDailySleepQual(dateToday)}</p>`).insertAfter(".p--daily-sleep");
+  $(`<p class="p p--weekly-sleep">Weekly Average: ${userSleep.calculateSleepOverWeek(dateToday)} hours</p>`).insertAfter(".h3--weekly-sleep");
+  $(`<p>Weekly Quality Average: ${userSleep.calculateWeeklySleepQual(dateToday)}</p>`).insertAfter(".h3--avg-sleep-quality");
   $(`<p>${userSleep.calculateAverageSleepQual()}</p>`).insertAfter(".h4--sleep-qual-record");
   $(`<p>${userSleep.calculateAverageSleep()}</p>`).insertAfter(".h4--sleep-time-record");
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
   $(`<p class="p p--daily-time-active">${userActivity.getMinutesActiveDay(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-daily");
   $(`<p class="p p--weekly-time-active">${userActivity.getMinutesActiveWeek(dateToday, 'minutesActive')} minutes</p>`).insertAfter(".h4--time-active-weekly");
   $(`<h4 class="h4 h4--miles-daily">Today's Mile Count</h4>
-  <p class="p p--miles-walked">${userActivity.getMilesWalkedDay(dateToday, 'numSteps', user)}</p>`).insertAfter('.article--miles-daily');
+  <p class="p p--miles-walked">${userActivity.getMilesWalkedDay(dateToday, 'numSteps', user)} miles</p>`).insertAfter('.article--miles-daily');
   $(`<h4 class="h4 h4--steps-daily">Today's Step Count</h4>
   <p class="p p--daily-steps">${userActivity.getActivityTotal(dateToday, 'numSteps')} steps / ${user.dailyStepGoal} steps</p>`).insertAfter('.article--step-goal-daily');
   $(`<h4 class="h4 h4--steps-weekly">Weekly Step Average</h4>
@@ -64,27 +64,27 @@ $(document).ready(function () {
 
   // Inserts Community Data to the DOM
   $(`<h4 class="h4 h4--community-time-active">Community Time Active</h4>
-  <p class="p p--community-time-active">${activityRepo.getAvgActivity(dateToday, 'minutesActive')}</p>`).insertAfter('.h3--community-daily');
+  <p class="p p--community-time-active">${activityRepo.getAvgActivity(dateToday, 'minutesActive')} minutes</p>`).insertAfter('.h3--community-daily');
   $(`<h4 class="h4 h4--community-steps">Community Step Average</h4>
-  <p class="p p--community-steps">${activityRepo.getAvgActivity(dateToday, 'numSteps')}</p>`).insertAfter('.p--community-time-active');
+  <p class="p p--community-steps">${activityRepo.getAvgActivity(dateToday, 'numSteps')} steps</p>`).insertAfter('.p--community-time-active');
   $(`<h4 class="h4 h4--community-step-goal">Community Step Average Step Goal</h4>
-  <p class="p p--community-step-goal">${userRepo.calculateStepGoal()}</p>`).insertAfter('.p--community-steps');
+  <p class="p p--community-step-goal">${userRepo.calculateStepGoal()} steps</p>`).insertAfter('.p--community-steps');
   $(`<h4 class="h4 h4--community-stairs">Community Average Stairs Climbed</h4>
-  <p class="p p--community-stairs">${activityRepo.getAvgActivity(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-step-goal');
+  <p class="p p--community-stairs">${activityRepo.getAvgActivity(dateToday, 'flightsOfStairs')} Flights of Stairs</p>`).insertAfter('.p--community-step-goal');
   $(`<h4 class="h4 h4--community-ounces">Community Average Water Intake</h4>
-  <p class="p p--community-ounces">${hydrationRepo.getAvgOunces(dateToday)}</p>`).insertAfter('.p--community-stairs');
+  <p class="p p--community-ounces">${hydrationRepo.getAvgOunces(dateToday)} ounces</p>`).insertAfter('.p--community-stairs');
   $(`<h4 class="h4 h4--community-sleep">Community Average Sleep</h4>
-  <p class="p p--community-sleep">${sleepRepo.calcAverageSleepAllDaily(dateToday)}</p>`).insertAfter('.p--community-ounces');
+  <p class="p p--community-sleep">${sleepRepo.calcAverageSleepAllDaily(dateToday)} hours</p>`).insertAfter('.p--community-ounces');
   $(`<h4 class="h4 h4--community-weekly-time-active">Community Weekly Time Active</h4>
-  <p class="p p--community-weekly-time-active">${activityRepo.getAvgActivityWeekly(dateToday, 'minutesActive')}</p>`).insertAfter('.h3--community-weekly');
+  <p class="p p--community-weekly-time-active">${activityRepo.getAvgActivityWeekly(dateToday, 'minutesActive')} minutes</p>`).insertAfter('.h3--community-weekly');
   $(`<h4 class="h4 h4--community-weekly-steps">Community Weekly Step Average</h4>
-  <p class="p p--community-weekly-steps">${activityRepo.getAvgActivityWeekly(dateToday, 'numSteps')}</p>`).insertAfter('.p--community-weekly-time-active');
+  <p class="p p--community-weekly-steps">${activityRepo.getAvgActivityWeekly(dateToday, 'numSteps')} steps</p>`).insertAfter('.p--community-weekly-time-active');
   $(`<h4 class="h4 h4--community-weekly-stairs">Community Weekly Stair Average</h4>
-  <p class="p p--community-weekly-stairs">${activityRepo.getAvgActivityWeekly(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-weekly-steps');
+  <p class="p p--community-weekly-stairs">${activityRepo.getAvgActivityWeekly(dateToday, 'flightsOfStairs')}Flights of Stairs</p>`).insertAfter('.p--community-weekly-steps');
   $(`<h4 class="h4 h4--community-weekly-ounces">Community Weekly Average Water Intake</h4>
-  <p class="p p--community-weekly-ounces">${hydrationRepo.getAvgOuncesWeek(dateToday)}</p>`).insertAfter('.p--community-weekly-stairs');
+  <p class="p p--community-weekly-ounces">${hydrationRepo.getAvgOuncesWeek(dateToday)} ounces</p>`).insertAfter('.p--community-weekly-stairs');
   $(`<h4 class="h4 h4--community-weekly-sleep">Community Weekly Average Time Slept</h4>
-  <p class="p p--community-weekly-sleep">${sleepRepo.getAvgSleepAllWeek(dateToday)}</p>`).insertAfter('.p--community-weekly-ounces');
+  <p class="p p--community-weekly-sleep">${sleepRepo.getAvgSleepAllWeek(dateToday)} hours</p>`).insertAfter('.p--community-weekly-ounces');
 
 
 // Inserts Charts on DOM
