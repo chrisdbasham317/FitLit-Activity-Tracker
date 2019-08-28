@@ -8,6 +8,17 @@ class HydrationRepository {
     return userData;
   }
 
+  findDateRange(passedDate) {
+    let findDate = Date.parse(passedDate);
+    let arr = [];
+    let dateRange = this.userHydration.forEach((entry) => {
+      if ((Date.parse(entry.date) <= findDate) && (Date.parse(entry.date) >= findDate - 604800000)) {
+        arr.push(entry);
+      };
+    });
+    return arr;
+  };
+
   sumArray(arr) {
     let total = arr.reduce((totalActivity, currentActivity) => {
       return totalActivity += currentActivity;
@@ -20,6 +31,14 @@ class HydrationRepository {
     let thisDaysHydration = this.userHydration.filter(elem => Date.parse(elem.date) === date);
     let totalHydration = thisDaysHydration.map(elem => elem.numOunces);
     return this.sumArray(totalHydration) / totalHydration.length;
+  }
+
+  getAvgOuncesWeek(passedDate) {
+    let dateRange = this.findDateRange(passedDate);
+    let hydrationArray = dateRange.map(elem => elem.numOunces);
+    let totalHydration = this.sumArray(hydrationArray);
+    let hydrationAvg = totalHydration / dateRange.length;
+    return hydrationAvg.toFixed(2);
   }
 }
 
