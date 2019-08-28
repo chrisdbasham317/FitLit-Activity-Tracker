@@ -137,7 +137,6 @@ p {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: 60% 40%; */
   grid-template-areas:
   'activity activity activity'
   'bottom bottom bottom';
@@ -282,7 +281,6 @@ p {
 .canvas-oz-by-date {
   float: left;
   height: 650px !important;
-  /* margin-top: 150px; */
   margin: 50px;
   margin-left: 50px;
   padding: 20px;
