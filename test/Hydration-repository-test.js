@@ -19,4 +19,9 @@ describe('HydrationRepository', () => {
     const hydrationRepository = new HydrationRepository(data);
     expect(hydrationRepository.getAvgOunces("2019/06/15")).to.equal(57.2);
   })
+
+  it('should be able to return the average water intake for all users for a given week', () => {
+    const hydrationRepository = new HydrationRepository(data);
+    expect(hydrationRepository.getAvgOuncesWeek("2019/06/16")).to.equal('59.17');
+  })
 })

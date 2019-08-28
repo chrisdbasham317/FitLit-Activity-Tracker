@@ -11,15 +11,12 @@ $(document).ready(function () {
   const hydrationRepo = new HydrationRepository(hydrationData);
   const getHydration = hydrationRepo.returnUserHydration(instanceId); 
   const userHydration = new Hydration(getHydration);
-  // console.log(userHydration)
   const sleepRepo = new SleepRepository(sleepData);
   const getSleep = sleepRepo.returnUserSleep(instanceId);
   const userSleep = new Sleep(getSleep);
-  // console.log(userSleep)
   const activityRepo = new ActivityRepository(activityData);
   const getActivity = activityRepo.returnUserActivityByID(instanceId);
   const userActivity = new Activity(getActivity);
-  // console.log(userActivity);
 
   //Inserts User Info to DOM
   $(`<h1>${user.findName()}'s</h1>`).insertBefore('h1');
@@ -73,6 +70,19 @@ $(document).ready(function () {
   <p class="p p--community-stairs">${activityRepo.getAvgActivity(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-steps');
   $(`<h4 class="h4 h4--community-ounces">Community Average Water Intake</h4>
   <p class="p p--community-ounces">${hydrationRepo.getAvgOunces(dateToday)}</p>`).insertAfter('.p--community-stairs');
+  $(`<h4 class="h4 h4--community-sleep">Community Average Sleep</h4>
+  <p class="p p--community-sleep">${sleepRepo.calcAverageSleepAllDaily(dateToday)}</p>`).insertAfter('.p--community-ounces');
+  $(`<h4 class="h4 h4--community-weekly-time-active">Community Weekly Time Active</h4>
+  <p class="p p--community-weekly-time-active">${activityRepo.getAvgActivityWeekly(dateToday, 'minutesActive')}</p>`).insertAfter('.h3--community-weekly');
+  $(`<h4 class="h4 h4--community-weekly-steps">Community Weekly Step Average</h4>
+  <p class="p p--community-weekly-steps">${activityRepo.getAvgActivityWeekly(dateToday, 'numSteps')}</p>`).insertAfter('.p--community-weekly-time-active');
+  $(`<h4 class="h4 h4--community-weekly-stairs">Community Weekly Stair Average</h4>
+  <p class="p p--community-weekly-stairs">${activityRepo.getAvgActivityWeekly(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-weekly-steps');
+  $(`<h4 class="h4 h4--community-weekly-ounces">Community Weekly Average Water Intake</h4>
+  <p class="p p--community-weekly-ounces">${hydrationRepo.getAvgOuncesWeek(dateToday)}</p>`).insertAfter('.p--community-weekly-stairs');
+  $(`<h4 class="h4 h4--community-weekly-sleep">Community Weekly Average Time Slept</h4>
+  <p class="p p--community-weekly-sleep">${sleepRepo.getAvgSleepAllWeek(dateToday)}</p>`).insertAfter('.p--community-weekly-ounces');
+
 
 // Inserts Charts on DOM
   let oz = [userHydration.getOuncesByDate(dateToday)];
@@ -155,5 +165,6 @@ $(document).ready(function () {
       ]
     }
   });
+
 
 });

@@ -7,7 +7,7 @@ class SleepRepository {
     let findDate = Date.parse(passedDate);
     let arr = [];
     let dateRange = this.usersInfo.forEach((data) => {
-    if((Date.parse(data.date) >= findDate) && (Date.parse(data.date) <= findDate + 604800000)) {
+    if((Date.parse(data.date) <= findDate) && (Date.parse(data.date) >= findDate - 604800000)) {
       arr.push(data);
     };
   });
@@ -29,6 +29,23 @@ class SleepRepository {
       return acc + person.hoursSlept
     }, 0);
     return totalSleepAll;
+  }
+
+  getAvgSleepAllWeek(passedDate) {
+    let dateRange = this.findDateRange(passedDate);
+    let totalSleep = dateRange.reduce((sum, currentEntry) => {
+      return sum += currentEntry.hoursSlept
+    }, 0);
+    let sleepAvg = totalSleep / dateRange.length;
+    return sleepAvg.toFixed(2);
+  }
+
+  calcAverageSleepAllDaily(passedDate) {
+    let date = Date.parse(passedDate);
+    let todaysSleep = this.usersInfo.filter(sleepData => Date.parse(sleepData.date) === date);
+    let totalSleep = todaysSleep.map(data => data.hoursSlept);
+    let cummulativeSleep = totalSleep.reduce((sleepTotal, hours) => sleepTotal += hours, 0) / todaysSleep.length;
+    return cummulativeSleep.toFixed(2);
   }
 
   calculateAverageSleepQualAll() {
