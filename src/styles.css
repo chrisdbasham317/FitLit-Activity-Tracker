@@ -37,13 +37,24 @@ h1 {
 
 .aside {
   background-color: blanchedalmond;
-  /* grid-area: aside; */
+  grid-area: aside;
+  height: 103.1%;
   padding: 5px;
+}
+
+.div--img-burger {
+  align-items: center;
+  display: flex;
+}
+
+.div--p-user-profile {
+  display: inline;
+  margin: 0px;
 }
 
 .img-hamburger-btn {
   height: 30px;
-  margin: 0px 10px;
+  margin: 0px 15px;
 }
 
 .backdrop {
@@ -52,9 +63,8 @@ h1 {
 }
 
 .bring-to-front {
-  /* background: blanchedalmond; */
-  /* grid-area: aside;
-  height: auto; */
+  list-style-type: none;
+  padding: 10px;
 }
 
 .hide {
@@ -150,7 +160,7 @@ p {
   background-color: #CD3551;
   border: 1px solid black;
   grid-area: header;
-  margin: 5px 0px;
+  margin: 2px;
   text-align: center;
 }
 
@@ -253,7 +263,6 @@ p {
   'daily weekly';
   grid-area: hydration;
   margin-bottom: 25px;
-  padding: 10px;
 }
 
 .canvas-daily-mile-count {
@@ -273,18 +282,19 @@ p {
 .canvas-oz-by-date {
   background-color: white;
   float: left;
-  height: 600px !important;
-  margin: 10px;
-  margin-left: 40px;
-  padding: 10px;
-  width: 350px !important;
+  height: 650px !important;
+  /* margin-top: 150px; */
+  margin: 50px;
+  margin-left: 50px;
+  padding: 20px;
+  width: 450px !important;
 }
 
 .image--water-bottle {
   height: 600px;
+  left: -1px;
   position: absolute;
-  top: 1404px;
-  left: -50px;
+  top: 1670px;
 }
 
 .div--img-canvas {
@@ -335,7 +345,6 @@ p {
   'weeklySleep allTimeSleep';
   grid-area: sleep;
   margin-bottom: 25px;
-  padding: 2px;
 }
 
 .section--daily-sleep {
