@@ -80,6 +80,8 @@ $(document).ready(function () {
   <p class="p p--community-weekly-stairs">${activityRepo.getAvgActivityWeekly(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-weekly-steps');
   $(`<h4 class="h4 h4--community-weekly-ounces">Community Weekly Average Water Intake</h4>
   <p class="p p--community-weekly-ounces">${hydrationRepo.getAvgOuncesWeek(dateToday)}</p>`).insertAfter('.p--community-weekly-stairs');
+  $(`<h4 class="h4 h4--community-weekly-sleep">Community Weekly Average Time Slept</h4>
+  <p class="p p--community-weekly-sleep">${sleepRepo.getAvgSleepAllWeek(dateToday)}</p>`).insertAfter('.p--community-weekly-ounces');
 
   // Hydration Chart
   let oz = [userHydration.getOuncesByDate(dateToday)];
