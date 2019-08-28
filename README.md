@@ -1,6 +1,6 @@
 # FitLit Starter Kit
 
-The link to our project: <a href=https://chrisdbasham317.github.io/FitLit-Activity-Tracker/src/index.html>
+The link to our project: https://chrisdbasham317.github.io/FitLit-Activity-Tracker/src/index.html
 
 ## Abstract 
 
