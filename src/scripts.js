@@ -78,6 +78,8 @@ $(document).ready(function () {
   <p class="p p--community-weekly-steps">${activityRepo.getAvgActivityWeekly(dateToday, 'numSteps')}</p>`).insertAfter('.p--community-weekly-time-active');
   $(`<h4 class="h4 h4--community-weekly-stairs">Community Weekly Stair Average</h4>
   <p class="p p--community-weekly-stairs">${activityRepo.getAvgActivityWeekly(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-weekly-steps');
+  $(`<h4 class="h4 h4--community-weekly-ounces">Community Weekly Average Water Intake</h4>
+  <p class="p p--community-weekly-ounces">${hydrationRepo.getAvgOuncesWeek(dateToday)}</p>`).insertAfter('.p--community-weekly-stairs');
 
   // Hydration Chart
   let oz = [userHydration.getOuncesByDate(dateToday)];
