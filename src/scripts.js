@@ -66,8 +66,10 @@ $(document).ready(function () {
   <p class="p p--community-time-active">${activityRepo.getAvgActivity(dateToday, 'minutesActive')}</p>`).insertAfter('.h3--community-daily');
   $(`<h4 class="h4 h4--community-steps">Community Step Average</h4>
   <p class="p p--community-steps">${activityRepo.getAvgActivity(dateToday, 'numSteps')}</p>`).insertAfter('.p--community-time-active');
+  $(`<h4 class="h4 h4--community-step-goal">Community Step Average Step Goal</h4>
+  <p class="p p--community-step-goal">${userRepo.calculateStepGoal()}</p>`).insertAfter('.p--community-steps');
   $(`<h4 class="h4 h4--community-stairs">Community Average Stairs Climbed</h4>
-  <p class="p p--community-stairs">${activityRepo.getAvgActivity(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-steps');
+  <p class="p p--community-stairs">${activityRepo.getAvgActivity(dateToday, 'flightsOfStairs')}</p>`).insertAfter('.p--community-step-goal');
   $(`<h4 class="h4 h4--community-ounces">Community Average Water Intake</h4>
   <p class="p p--community-ounces">${hydrationRepo.getAvgOunces(dateToday)}</p>`).insertAfter('.p--community-stairs');
   $(`<h4 class="h4 h4--community-sleep">Community Average Sleep</h4>
