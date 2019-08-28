@@ -28,17 +28,13 @@
       </section>
       <section class="section section-weekly-stats">
         <h3 class="h3 h3--community-weekly">Weekly</h3>
-          <ul class="ul ul--all-community-weekly">
-            <li class="li--activity-community-weekly"></li>
-            <li class="li--hydration-community-weekly"></li>
-            <li class="li--sleep-community-weekly"></li>
-          </ul>
       </section>
     </aside>
     <main class="main main--dashboard">
       <section class="section section--activity-dashboard">
         <h2 class="h2 h2--activity">Activity</h2>
-        <article class="article article--time-active">
+        <article class="article article--time-active" draggable="true" ondrop="drop(event)"
+          ondragover="allowDrop(event)" ondragstart="drag(event)">
           <h3 class="h3 h3--time-active">Time Active</h3>
           <article class="article article--time-active-daily">
             <h4 class="h4 h4--time-active-daily">Today's Total Time Active</h4>
@@ -48,7 +44,7 @@
           </article>
         </article>
         <article class="article article--distance-group">
-          <section class="section section--miles-walked">
+          <section class="section section--miles-walked" draggable="true" ondragstart="drag(event)">
             <h3 class="h3 h3--miles-walked">Miles Walked</h3>
               <article class="article article--miles-daily">
                   <canvas id="daily-mile-count" class="canvas canvas-daily-mile-count"></canvas>
@@ -57,7 +53,7 @@
                
               </article>
           </section>
-          <section class="section section--step-goal">
+          <section class="section section--step-goal" draggable="true" ondragstart="drag(event)">
             <h3 class="h3 h3--step-goal">Step Goal</h3>
             <article class="article article--step-goal-daily">
                 <canvas id="daily-step-metric" class="canvas canvas-daily-step-metric"></canvas>
