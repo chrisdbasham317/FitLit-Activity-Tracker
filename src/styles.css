@@ -38,7 +38,7 @@ h1 {
 .aside {
   background-color: blanchedalmond;
   grid-area: aside;
-  height: 103.1%;
+  height: 103.5%;
   padding: 5px;
 }
 
@@ -280,7 +280,6 @@ p {
 }
 
 .canvas-oz-by-date {
-  background-color: white;
   float: left;
   height: 650px !important;
   /* margin-top: 150px; */

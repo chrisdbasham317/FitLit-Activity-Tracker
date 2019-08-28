@@ -92,16 +92,13 @@ $(document).ready(function () {
           label: "Daily Oz. consumed",
           backgroundColor: "#0B4EBE",
         }
-      ]
+      ],
+      fontColor: 'black',
     }
   });
 
   let dailyMileCount = [userActivity.getMilesWalkedDay(dateToday, 'numSteps', user)];
-  
-  // !!!!!!!!!!!!!!!!! Add as a custom metric
-  
   dailyMileCount.unshift(10)
-  // let totalMileCount = [activityRepo.getAvgActivity(dateToday, 'milesWalked')]
   let milesByDateChart = $('#daily-mile-count');
   let dailyMileChart = new Chart(milesByDateChart, {
   type: 'polarArea',
@@ -110,12 +107,15 @@ $(document).ready(function () {
     datasets: [
         { 
           data: dailyMileCount,
-          // label: "Daily Mile Count",
-          labels: [
-            'Miles Walked',
-            '15 Miles'
-          ],
-          backgroundColor: 
+          label: "Daily Mile Count",
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ]
         }
       ]
     }
