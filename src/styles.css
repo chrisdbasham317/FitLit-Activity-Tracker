@@ -5,6 +5,7 @@
 body {
   background-color: #262F31;
   display: grid;
+  font-family: 'Roboto Mono', monospace;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-areas: 
@@ -12,7 +13,7 @@ body {
   'main main main aside' 
   'main main main aside';
   grid-template-columns: 1fr 1fr 1fr 20%;
-  /* grid-template-rows: 10% 1fr 1fr; */
+  grid-template-rows: 7% 1fr 1fr;
   margin: 0px;
   min-height: 100vh;
   padding: 20px;
@@ -22,12 +23,13 @@ body {
 .header {
   height: 100px;
   grid-area: head;
-  padding: 20px;
   text-align: center;
 }
 
 h1 {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #FFF;
+  color: #FFF;
+  font-family: 'Lexend Zetta', sans-serif;
   font-size: 3em;
   margin: auto;
   width: 340px;
@@ -35,8 +37,8 @@ h1 {
 
 .aside {
   background-color: blanchedalmond;
-  grid-area: aside;
-  padding: 2px;
+  /* grid-area: aside; */
+  padding: 5px;
 }
 
 .img-hamburger-btn {
@@ -50,11 +52,9 @@ h1 {
 }
 
 .bring-to-front {
-  background: blanchedalmond;
-  grid-area: aside;
-  height: auto;
-  position: absolute;
-  z-index: 20;
+  /* background: blanchedalmond; */
+  /* grid-area: aside;
+  height: auto; */
 }
 
 .hide {
@@ -83,11 +83,42 @@ li {
   height: 33%;
 }
 
-.h2--community-tracker {
+h2 {
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 2em;
+  height: 60px;
+  padding: 5px;
+}
+
+h3 {
   border-bottom: 2px solid black;
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 1.5;
+  text-align: center;
+}
+
+p {
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 50px;
+}
+
+.h2--community-tracker {
+  font-size: 1.7em;
   margin: 0px;
   padding: 5px;
   text-align: center;
+}
+
+.h3--community-daily {
+  border-top: 2px solid black;
+  border-bottom: none;
 }
 
 .main {
@@ -108,7 +139,7 @@ li {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10% 1fr 1fr;
+  grid-template-rows: 5% 1fr 1fr;
   grid-template-areas: 
   'header header header'
   'time distance breakdown'
@@ -120,7 +151,6 @@ li {
   border: 1px solid black;
   grid-area: header;
   margin: 5px 0px;
-  padding: 10px;
   text-align: center;
 }
 
@@ -128,8 +158,7 @@ li {
   background-color: #CD3551;
   border: 1px solid black;
   grid-area: time;
-  height: 500px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--time-active {
@@ -148,9 +177,8 @@ li {
   background-color: #CD3551;
   border: 1px solid black;
   display: block;
-  height: 47.5%;
   margin-bottom: 20px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--miles-walked {
@@ -165,9 +193,8 @@ li {
   background-color: #CD3551;
   border: 1px solid black;
   display: block;
-  height: 47.5%;
   margin-top: 20px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--step-goal {
@@ -182,8 +209,7 @@ li {
   background-color: #CD3551;
   border: 1px solid black;
   grid-area: breakdown;
-  height: 500px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--breakdown {
@@ -200,52 +226,140 @@ li {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 10% 1fr 10% 1fr;
+  grid-template-rows: 3% 1fr 3% 1fr;
   grid-template-areas: 
-  'hydrationHeader hydrationHeader' 
+  'hydrationHead hydrationHead'
   'hydration hydration'
-  'sleepHeader sleepHeader'
+  'sleepHead sleepHead'
   'sleep sleep';
-}
-
-.article--hydration {
-  background-color: #9AD2FF;
-  border: 1px solid black;
-  grid-area: hydration;
-  margin-bottom: 25px;
-  padding: 2px;
-}
-
-.canvas-oz-by-date {
-  background-color: white;
-  height: auto;
-  margin: 10px;
-  padding: 10px;
-  width: auto;
 }
 
 .h2--hydration {
   background-color: #9AD2FF;
   border-bottom: 2px solid black;
-  grid-area: hydrationHeader;
+  grid-area: hydrationHead;
   margin: 0px;
   padding: 5px;
   text-align: center;
 }
 
+.article--hydration {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  'hydrationHeader hydrationHeader'
+  'daily weekly';
+  grid-area: hydration;
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+.canvas-daily-mile-count {
+  display: block;
+  height: 300px !important;
+  margin: auto;
+  width: 300px !important;
+}
+
+.canvas-daily-step-metric {
+  display: block;
+  height: 250px !important;
+  width: 250px !important;
+  margin: auto;
+}
+
+.canvas-oz-by-date {
+  background-color: white;
+  float: left;
+  height: 600px !important;
+  margin: 10px;
+  margin-left: 40px;
+  padding: 10px;
+  width: 350px !important;
+}
+
+.image--water-bottle {
+  height: 600px;
+  position: absolute;
+  top: 1404px;
+  left: -50px;
+}
+
+.div--img-canvas {
+  height: 90%;
+  width: 85%;
+}
+
+.section--daily-ounces {
+  background-color: #9BD2FF;
+  border: 1px solid black;
+  grid-area: hydrationLeft;
+}
+
+.section--weekly-ounces {
+  background-color: #9BD2FF;
+  border: 1px solid black;
+  grid-area: hydrationRight;
+  padding: 5px;
+}
+
+.section--daily-ounces {
+  grid-area: daily;
+  padding: 5px;
+}
+
+.section--weekly-ounces {
+  grid-area: weekly;
+  padding: 5px;
+}
+
 .h2--sleep {
   background-color: #BBA2FF;
   border-bottom: 2px solid black;
-  grid-area: sleepHeader;
+  grid-area: sleepHead;
   margin: 0px;
   padding: 5px;
   text-align: center;
 }
 
 .article--sleep {
-  background-color: #BBA2FF;
-  border: 1px solid black;
+  display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  'dailySleep allTimeSleep'
+  'weeklySleep allTimeSleep';
   grid-area: sleep;
   margin-bottom: 25px;
   padding: 2px;
+}
+
+.section--daily-sleep {
+  background-color: #BBA1FF;
+  border: 1px solid black;
+  grid-area: dailySleep;
+  padding: 5px;
+}
+
+.section--weekly-sleep {
+  background-color: #BBA1FF;
+  border: 1px solid black;
+  grid-area: weeklySleep;
+  padding: 5px;
+}
+
+.section--alltime-record {
+  background-color: #BBA1FF;
+  border: 1px solid black;
+  grid-area: allTimeSleep;
+  padding: 10px;
+}
+
+.h3--daily-oz,
+.h3--weekly-oz {
+  border-bottom: 2px solid black;
 }

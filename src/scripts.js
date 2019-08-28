@@ -24,13 +24,14 @@ $(document).ready(function () {
   //Inserts User Info to DOM
   $(`<h1>${user.findName()}'s</h1>`).insertBefore('h1');
   $(`<ul class="ul ul--user-info hide bring-to-front">
-  <li>User ID: ${user.id}</li>
-  <li>User Name: ${user.name}</li>
-  <li>Address: ${user.address}</li>
-  <li>Email: ${user.email}</li>
-  <li>Stride Length: ${user.strideLength}</li>
-  <li>Daily Step Goal: ${user.dailyStepGoal}</li>
-  <li>Friends: ${friendsFName.join(', ')}</li>
+  <p class="p--user-prompt">Hello, ${user.name}</p>
+  <p class="p--profile-prompt">Here is your user profile:</p>
+  <li class="li">User ID: ${user.id}</li>
+  <li class="li">Address: ${user.address}</li>
+  <li class="li">Email: ${user.email}</li>
+  <li class="li">Stride Length: ${user.strideLength}</li>
+  <li class="li">Daily Step Goal: ${user.dailyStepGoal}</li>
+  <li class="li">Friends: ${friendsFName.join(', ')}</li>
   <div class="backdrop hide"></div>
   </ul>`).appendTo('.article--hamburger-menu');
   $('.img-hamburger-btn').on('click', function () {
@@ -38,7 +39,7 @@ $(document).ready(function () {
   });
 
   //Inserts Hydration Data to DOM
-  $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h3--daily-oz");
+  // $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h3--daily-oz");
   $(`<p>${userHydration.getWeeklyOunces(dateToday)}</p>`).insertAfter(".h3--weekly-oz");
   // $(`<p>${userHydration.getOuncesByDate(dateToday)}</p>`).insertAfter(".h2--hydration");
 
@@ -83,16 +84,16 @@ $(document).ready(function () {
     labels: oz,
     datasets: [
         { 
+          title:{
+            text: "Daily Oz. consumed",
+            fontSize: 50,
+            },
           data: oz,
+          options: {
+            responsive: true,
+            maintainAspectRatio: false
+          },
           label: "Daily Oz. consumed",
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ]
         }
       ]
     }
