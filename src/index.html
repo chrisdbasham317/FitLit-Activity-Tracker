@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="sytlesheet" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Zetta|Roboto+Mono&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Activity Tracker</title>
@@ -14,7 +15,10 @@
     </header>
     <aside class="aside">
       <section class="section section--hamburger-menu">
-        <img src=../images/menu.png class="img img-hamburger-btn">
+        <div class="div--img-burger">
+          <img src=../images/menu.png class="img img-hamburger-btn">
+          <p class="div--p-user-profile">User Profile</p>
+        </div>
         <article class="article article--hamburger-menu">
         </article>
         <h2 class="h2 h2--community-tracker">Community Tracker</h2>
@@ -59,30 +63,30 @@
             </article>
           </section>
         </article>
-        <article class="article article--breakdown" draggable="true" ondragstart="drag(event)">
-          <h3 class="h3 h3--breakdown">Breakdown</h3>
+        <article class="article article--breakdown">
+          <h3 class="h3 h3--breakdown">Stair Count</h3>
         </article>
       </section>
       <section class="section section--hydration-sleep">
-        <article class="article article--hydration" draggable="true">
-          <h2 class="h2 h2--hydration">Hydration</h2>
-          <canvas id="oz-by-date" class="canvas canvas-oz-by-date"></canvas>
+        <h2 class="h2 h2--hydration">Hydration</h2>
+        <article class="article article--hydration">
           <section class="section section--daily-ounces">
-            <h3 class="h3 h3--daily-oz">Daily</h3>
+            <h3 class="h3 h3--daily-oz">Daily Oz.</h3>
+            <div class="div--img-canvas">
+              <canvas id="oz-by-date" class="canvas canvas-oz-by-date"></canvas>
+            </div>
           </section>
           <section class="section section--weekly-ounces">
-            <h3 class="h3 h3--weekly-oz"> Weekly</h3>
+            <h3 class="h3 h3--weekly-oz"> Weekly Oz.</h3>
           </section>
         </article>
-        <article class="article article--sleep" draggable="true">
-          <h2 class="h2 h2--sleep">Sleep</h2>
+        <h2 class="h2 h2--sleep">Sleep</h2>
+        <article class="article article--sleep">
           <section class="section section--daily-sleep">
             <h3 class="h3 h3--daily-sleep">Time Slept</h3>
           </section>
           <section class="section section--weekly-sleep">
             <h3 class="h3 h3--weekly-sleep">Average Time Slept</h3>
-          </section>
-          <section class="section section--avg-sleep-quality">
             <h3 class="h3 h3--avg-sleep-quality">Average Sleep Quality</h3>
           </section>
           <section class="section section--alltime-record">

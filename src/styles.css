@@ -3,10 +3,9 @@
 }
 
 body {
-  background-image: url(../images/cool-background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #262F31;
   display: grid;
+  font-family: 'Roboto Mono', monospace;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-areas: 
@@ -14,7 +13,7 @@ body {
   'main main main aside' 
   'main main main aside';
   grid-template-columns: 1fr 1fr 1fr 20%;
-  /* grid-template-rows: 10% 1fr 1fr; */
+  grid-template-rows: 7% 1fr 1fr;
   margin: 0px;
   min-height: 100vh;
   padding: 20px;
@@ -24,12 +23,13 @@ body {
 .header {
   height: 100px;
   grid-area: head;
-  padding: 20px;
   text-align: center;
 }
 
 h1 {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #FFF;
+  color: #FFF;
+  font-family: 'Lexend Zetta', sans-serif;
   font-size: 3em;
   margin: auto;
   width: 340px;
@@ -38,27 +38,33 @@ h1 {
 .aside {
   background-color: blanchedalmond;
   grid-area: aside;
-  opacity: 0.7;
-  padding: 2px;
+  height: 103.5%;
+  padding: 5px;
+}
+
+.div--img-burger {
+  align-items: center;
+  display: flex;
+}
+
+.div--p-user-profile {
+  display: inline;
+  margin: 0px;
 }
 
 .img-hamburger-btn {
   height: 30px;
-  margin: 0px 10px;
+  margin: 0px 15px;
 }
 
 .backdrop {
   height: 100%;
   width: 100%;
-  opacity: 0.4;
 }
 
 .bring-to-front {
-  background: blanchedalmond;
-  grid-area: aside;
-  height: auto;
-  position: absolute;
-  z-index: 20;
+  list-style-type: none;
+  padding: 10px;
 }
 
 .hide {
@@ -87,11 +93,42 @@ li {
   height: 33%;
 }
 
-.h2--community-tracker {
+h2 {
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 2em;
+  height: 60px;
+  padding: 5px;
+}
+
+h3 {
   border-bottom: 2px solid black;
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 1.5;
+  text-align: center;
+}
+
+p {
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 50px;
+}
+
+.h2--community-tracker {
+  font-size: 1.7em;
   margin: 0px;
   padding: 5px;
   text-align: center;
+}
+
+.h3--community-daily {
+  border-top: 2px solid black;
+  border-bottom: none;
 }
 
 .main {
@@ -100,7 +137,6 @@ li {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: 60% 40%; */
   grid-template-areas:
   'activity activity activity'
   'bottom bottom bottom';
@@ -112,7 +148,7 @@ li {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10% 1fr 1fr;
+  grid-template-rows: 5% 1fr 1fr;
   grid-template-areas: 
   'header header header'
   'time distance breakdown'
@@ -123,18 +159,15 @@ li {
   background-color: #CD3551;
   border: 1px solid black;
   grid-area: header;
-  margin: 5px 0px;
-  padding: 10px;
+  margin: 2px;
   text-align: center;
 }
 
 .article--time-active {
   background-color: #CD3551;
   border: 1px solid black;
-  opacity: 0.7;
   grid-area: time;
-  height: 500px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--time-active {
@@ -147,16 +180,14 @@ li {
 
 .article--distance-group {
   grid-area: distance;
-  opacity: 0.7;
 }
 
 .section--miles-walked {
   background-color: #CD3551;
   border: 1px solid black;
   display: block;
-  height: 47.5%;
   margin-bottom: 20px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--miles-walked {
@@ -171,9 +202,8 @@ li {
   background-color: #CD3551;
   border: 1px solid black;
   display: block;
-  height: 47.5%;
   margin-top: 20px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--step-goal {
@@ -188,9 +218,7 @@ li {
   background-color: #CD3551;
   border: 1px solid black;
   grid-area: breakdown;
-  height: 500px;
-  opacity: 0.7;
-  padding: 2px;
+  padding: 5px;
 }
 
 .h3--breakdown {
@@ -207,38 +235,137 @@ li {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-  'hydration sleep'; 
+  grid-template-rows: 3% 1fr 3% 1fr;
+  grid-template-areas: 
+  'hydrationHead hydrationHead'
+  'hydration hydration'
+  'sleepHead sleepHead'
+  'sleep sleep';
+}
+
+.h2--hydration {
+  background-color: #9AD2FF;
+  border-bottom: 2px solid black;
+  grid-area: hydrationHead;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
 }
 
 .article--hydration {
-  background-color: #9AD2FF;
-  border: 1px solid black;
+  display: grid;
+  grid-column-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  'hydrationHeader hydrationHeader'
+  'daily weekly';
   grid-area: hydration;
-  opacity: 0.7;
-  padding: 2px;
+  margin-bottom: 25px;
+}
+
+.canvas-daily-mile-count {
+  display: block;
+  height: 300px !important;
+  margin: auto;
+  width: 300px !important;
+}
+
+.canvas-daily-step-metric {
+  display: block;
+  height: 250px !important;
+  width: 250px !important;
+  margin: auto;
 }
 
 .canvas-oz-by-date {
-  background-color: white;
-  height: auto;
-  margin: 10px;
-  padding: 10px;
-  width: auto;
+  float: left;
+  height: 650px !important;
+  margin: 50px;
+  margin-left: 50px;
+  padding: 20px;
+  width: 450px !important;
 }
 
-.h2--hydration,
-.h2--sleep {
-  text-align: center;
-  border-bottom: 2px solid black;
-  margin: 0px;
+.image--water-bottle {
+  height: 600px;
+  left: -1px;
+  position: absolute;
+  top: 1670px;
+}
+
+.div--img-canvas {
+  height: 90%;
+  width: 85%;
+}
+
+.section--daily-ounces {
+  background-color: #9BD2FF;
+  border: 1px solid black;
+  grid-area: hydrationLeft;
+}
+
+.section--weekly-ounces {
+  background-color: #9BD2FF;
+  border: 1px solid black;
+  grid-area: hydrationRight;
   padding: 5px;
 }
 
-.article--sleep {
+.section--daily-ounces {
+  grid-area: daily;
+  padding: 5px;
+}
+
+.section--weekly-ounces {
+  grid-area: weekly;
+  padding: 5px;
+}
+
+.h2--sleep {
   background-color: #BBA2FF;
-  border: 1px solid black;
+  border-bottom: 2px solid black;
+  grid-area: sleepHead;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+}
+
+.article--sleep {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  'dailySleep allTimeSleep'
+  'weeklySleep allTimeSleep';
   grid-area: sleep;
-  opacity: 0.7;
-  padding: 2px;
+  margin-bottom: 25px;
+}
+
+.section--daily-sleep {
+  background-color: #BBA1FF;
+  border: 1px solid black;
+  grid-area: dailySleep;
+  padding: 5px;
+}
+
+.section--weekly-sleep {
+  background-color: #BBA1FF;
+  border: 1px solid black;
+  grid-area: weeklySleep;
+  padding: 5px;
+}
+
+.section--alltime-record {
+  background-color: #BBA1FF;
+  border: 1px solid black;
+  grid-area: allTimeSleep;
+  padding: 10px;
+}
+
+.h3--daily-oz,
+.h3--weekly-oz {
+  border-bottom: 2px solid black;
 }
