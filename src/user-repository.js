@@ -9,9 +9,10 @@ class UserRepository {
   }
 
   calculateStepGoal() {
-    let goal = 0;
-    let stepGoal = this.users.forEach(user => goal += user.dailyStepGoal)
-    return goal / this.users.length
+    let stepGoal = this.users.reduce((sum, currentUser) => {
+      return sum += currentUser.dailyStepGoal
+    }, 0)
+    return stepGoal / this.users.length
   }
 
 }
