@@ -5,17 +5,17 @@ $(document).ready(function () {
   const dateToday = `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`
   const instanceId = getRanId();
   const userRepo = new UserRepository(userData);
-  const getUser = userRepo.returnUser(instanceId);
+  const getUser = userRepo.getUser(instanceId);
   const user = new User(getUser);
-  const friendsFName = user.friends.map(elem => userRepo.returnUser(elem)['name'].split(' ')[0]);
+  const friendsFName = user.friends.map(elem => userRepo.getUser(elem)['name'].split(' ')[0]);
   const hydrationRepo = new HydrationRepository(hydrationData);
-  const getHydration = hydrationRepo.returnUserHydration(instanceId); 
+  const getHydration = hydrationRepo.getUserHydration(instanceId); 
   const userHydration = new Hydration(getHydration);
   const sleepRepo = new SleepRepository(sleepData);
-  const getSleep = sleepRepo.returnUserSleep(instanceId);
+  const getSleep = sleepRepo.getUserSleep(instanceId);
   const userSleep = new Sleep(getSleep);
   const activityRepo = new ActivityRepository(activityData);
-  const getActivity = activityRepo.returnUserActivityByID(instanceId);
+  const getActivity = activityRepo.getUserActivityByID(instanceId);
   const userActivity = new Activity(getActivity);
 
   //Inserts User Info to DOM
