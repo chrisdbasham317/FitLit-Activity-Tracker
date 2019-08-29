@@ -3,7 +3,7 @@ class Activity {
     this.userActivity = activityObj;
   }
 
-  sumActivty(arr) {
+  sumActivity(arr) {
     let total = arr.reduce((totalActivity, currentActivity) => {
       return totalActivity += currentActivity;
     }, 0);
@@ -14,7 +14,7 @@ class Activity {
     let date = Date.parse(passedDate);
     let thisDaysActivity = this.userActivity.filter(elem => Date.parse(elem.date) === date);
     let totalActivity = thisDaysActivity.map(elem => elem[activity]);
-    return this.sumActivty(totalActivity);
+    return this.sumActivity(totalActivity);
   }
 
   findDateRange(passedDate) {
@@ -41,19 +41,19 @@ class Activity {
   getMinutesActiveWeek(passedDate, activity) {
     let dateRangeObjs = this.findDateRange(passedDate);
     let weeksMinutes = dateRangeObjs.map(elem => elem[activity]);
-    let avgActivity = this.sumActivty(weeksMinutes) / 7;
+    let avgActivity = this.sumActivity(weeksMinutes) / 7;
     return avgActivity.toFixed(2);
   }
 
-  returnStepGoalMet(passedDate, userStepGoal) {
+  getStepGoalMet(passedDate, userStepGoal) {
     let date = Date.parse(passedDate);
     let todaysLogs = this.userActivity.filter(elem => Date.parse(elem.date) === date);
     let todaysSteps = todaysLogs.map(elem => elem['numSteps']);
-    let totalSteps = this.sumActivty(todaysSteps);
+    let totalSteps = this.sumActivity(todaysSteps);
     return totalSteps >= userStepGoal ? true : false;
   }
 
-  returnAllMetStepGoals(userStepGoal) {
+  getAllMetStepGoals(userStepGoal) {
     let metGoals = this.userActivity.filter(day => day.numSteps >= userStepGoal);
     let daysMet = metGoals.map(entry => entry.date);
     return metGoals.length > 0 ? daysMet : "You haven't reached your step goal yet, Keep Striving For It!";

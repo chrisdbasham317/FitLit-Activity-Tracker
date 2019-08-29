@@ -3,7 +3,7 @@ class HydrationRepository {
     this.userHydration = hydrationData;
   }
 
-  returnUserHydration(userId) {
+  getUserHydration(userId) {
     let userData = this.userHydration.filter(user => user.userID === userId)
     return userData;
   }

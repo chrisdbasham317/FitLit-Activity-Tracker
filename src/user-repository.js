@@ -2,7 +2,7 @@ class UserRepository {
   constructor(data) {
     this.users = data;
   }
-  returnUser(userId) {
+  getUser(userId) {
     let foundUser = this.users.find(user => user.id === userId)
     return foundUser
   }
