@@ -19,7 +19,7 @@ class SleepRepository {
     return reducedArr
   }
 
-  returnUserSleep(userId) {
+  getUserSleep(userId) {
     let foundUserSleep = this.usersInfo.filter(sleeper => sleeper.userID === userId)
     return foundUserSleep;
   }
